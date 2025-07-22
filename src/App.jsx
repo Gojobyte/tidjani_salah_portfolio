@@ -29,8 +29,8 @@ export default function App() {
         <Hero />
         <About />
         <Services />
-        <Projects />
-        <Contact />
+        {/* <Projects />
+        <Contact /> */}
       </main>
       <Footer />
     </div>
