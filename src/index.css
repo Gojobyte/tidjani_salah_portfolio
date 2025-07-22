@@ -1,0 +1,14 @@
+/* Scroll fluide entre les sections */
+html {
+  scroll-behavior: smooth;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.active-link {
+  color: theme('colors.primary');
+}
+
+.active-link span {
+  width: 100% !important;
+}
