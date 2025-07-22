@@ -1,7 +1,7 @@
 import Section from './ui/Section';
 import Container from './ui/Container';
 import Button from './ui/Button';
-import heroImg from '../assets/profile.jpg';
+import heroImg from '../assets/profile1.png';
 
 export default function Hero() {
   return (

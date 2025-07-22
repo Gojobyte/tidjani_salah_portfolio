@@ -18,7 +18,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-gray-900 text-gray-400 py-16"
+      className="bg-gray-900 text-gray-400 py-16 dark:bg-gray-950"
     >
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-10">
         {/* Colonne 1 : Logo + citation */}

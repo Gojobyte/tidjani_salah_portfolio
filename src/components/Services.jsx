@@ -37,7 +37,7 @@ const services = [
 
 export default function Services() {
   return (
-    <Section id="services" className="bg-white dark:bg-gray-900">
+    <Section id="services" className="bg-white dark:bg-gray-900 ">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
