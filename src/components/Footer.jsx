@@ -61,18 +61,18 @@ export default function Footer() {
           <ul className="text-sm space-y-2">
             <li className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              <a href="mailto:tidjani@example.com">tidjani@example.com</a>
+              <a href="mailto:tidjanisal@gmail.com">tidjani@example.com</a>
             </li>
             <li className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              +235 65 00 00 00
+              +235 65 62 62 40
             </li>
           </ul>
           <div className="flex gap-4 mt-6">
             <a href="#" className="hover:text-white transition">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="#" className="hover:text-white transition">
+            <a href="https://fr.linkedin.com/in/tidjani-salah-a8739335" className="hover:text-white transition">
               <Linkedin className="w-5 h-5" />
             </a>
           </div>
