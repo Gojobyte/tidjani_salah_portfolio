@@ -1,7 +1,7 @@
 import Section from './ui/Section';
 import Container from './ui/Container';
 import Button from './ui/Button';
-import heroImg from '../assets/profile1.png';
+import heroImg from '../assets/photo2.jpeg';
 
 export default function Hero() {
   return (
@@ -28,7 +28,7 @@ export default function Hero() {
             </p>
 
             <blockquote className="mt-6 italic text-sm text-gray-500 dark:text-gray-400 border-l-4 pl-4 border-primary">
-              “L’impact durable commence par des solutions locales.” — T. Salah
+              “Agir localement, penser stratégiquement, bâtir durablement.” — T. Salah
             </blockquote>
 
             {/* === Boutons réutilisables === */}
@@ -47,7 +47,7 @@ export default function Hero() {
 
           {/* === Image à droite === */}
           <div className="flex-1 flex justify-center">
-            <div className="w-40 h-40 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+            <div className="w-30 h-30 md:w-64 md:h-604 rounded-full overflow-hidden border-4 border-primary shadow-lg">
               <img
                 src={heroImg}
                 alt="Tidjani Salah"

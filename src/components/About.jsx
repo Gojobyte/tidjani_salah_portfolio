@@ -54,9 +54,10 @@ export default function About() {
 
         {/* Citation */}
         <div className="mt-12 text-center italic text-sm text-gray-500 dark:text-gray-400">
-          “L’impact durable commence par des solutions locales.” — Tidjani Salah
+          “Plus qu’un parcours, c’est une vision que je porte : celle d’une Afrique forte, formée, et actrice de son propre développement." — Tidjani Salah
         </div>
       </Container>
     </Section>
   );
 }
+

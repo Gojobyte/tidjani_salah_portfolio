@@ -6,6 +6,9 @@ import Services from './components/Services';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
+import { Toaster } from 'react-hot-toast';
+
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,11 +29,13 @@ export default function App() {
     <div className="bg-light dark:bg-dark text-gray-900 dark:text-gray-100 transition-colors duration-300">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <main >
+        <Toaster position="bottom-center" />
         <Hero />
         <About />
         <Services />
-        {/* <Projects />
-        <Contact /> */}
+        <Projects />
+        <Contact /> 
+        <ScrollToTopButton />
       </main>
       <Footer />
     </div>

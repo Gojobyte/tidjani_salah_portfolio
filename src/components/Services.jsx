@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // src/components/Services.jsx
 import Section from './ui/Section';
 import Container from './ui/Container';

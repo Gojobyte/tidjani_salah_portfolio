@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // src/components/Footer.jsx
 import { Facebook, Linkedin, Mail, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -25,7 +26,7 @@ export default function Footer() {
         <div>
           <h3 className="text-2xl font-bold text-white mb-2">Tidjani.</h3>
           <p className="text-sm leading-relaxed">
-            “L’impact durable commence par des solutions locales.”
+            ““L’Afrique a besoin d’actions structurantes, pas de promesses : chaque projet est un levier pour bâtir l’avenir.”  
           </p>
           <p className="text-xs text-gray-500 mt-4">
             &copy; {new Date().getFullYear()} Tous droits réservés.
@@ -80,3 +81,4 @@ export default function Footer() {
     </motion.footer>
   );
 }
+        
