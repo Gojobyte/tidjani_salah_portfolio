@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+ 
 // src/components/Footer.jsx
 import { Facebook, Linkedin, Mail, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
