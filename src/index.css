@@ -2,13 +2,106 @@
 html {
   scroll-behavior: smooth;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Animations personnalisées */
+@layer utilities {
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounceSubtle 2s ease-in-out infinite;
+  }
+
+  /* États de survol plus fluides */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Focus visible pour l'accessibilité */
+  .focus-ring:focus {
+    outline: 2px solid theme('colors.primary');
+    outline-offset: 2px;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
 .active-link {
   color: theme('colors.primary');
 }
 
 .active-link span {
   width: 100% !important;
+}
+
+/* Optimisation des performances */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Amélioration des contrastes pour l'accessibilité */
+.text-accessible {
+  color: #1f2937;
+}
+
+.dark .text-accessible {
+  color: #f9fafb;
 }

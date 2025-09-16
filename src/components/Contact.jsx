@@ -11,33 +11,61 @@ export default function Contact() {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(formRef.current);
+    try {
+      const formData = new FormData(formRef.current);
+      const templateParams = {
+        user_name: formData.get('user_name')?.trim(),
+        user_email: formData.get('user_email')?.trim(),
+        message: formData.get('message')?.trim(),
+      };
 
-    emailjs
-      .send(
+      // Validation côté client
+      if (!templateParams.user_name || !templateParams.user_email || !templateParams.message) {
+        toast.error('⚠️ Veuillez remplir tous les champs obligatoires.');
+        setLoading(false);
+        return;
+      }
+
+      // Validation email simple
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(templateParams.user_email)) {
+        toast.error('⚠️ Veuillez saisir une adresse email valide.');
+        setLoading(false);
+        return;
+      }
+
+      await emailjs.send(
         'service_zfmuutf',
         'template_h0gzjkd',
-        {
-          user_name: formData.get('user_name'),
-          user_email: formData.get('user_email'),
-          message: formData.get('message'),
-        },
+        templateParams,
         'ycfUdv3ueLwooSves'
-      )
-      .then(() => {
-        toast.success('📨 Message envoyé avec succès !');
-        formRef.current.reset();
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('EmailJS error:', error);
-        toast.error("❌ Une erreur s'est produite. Veuillez réessayer.");
-        setLoading(false);
+      );
+
+      toast.success('📨 Message envoyé avec succès !', {
+        duration: 4000,
+        position: 'bottom-center',
       });
+      formRef.current.reset();
+    } catch (error) {
+      console.error('EmailJS error:', error);
+
+      // Messages d'erreur spécifiques
+      if (error.status === 422) {
+        toast.error("❌ Données du formulaire invalides. Vérifiez vos informations.");
+      } else if (error.status === 429) {
+        toast.error("⏳ Trop de tentatives. Veuillez patienter quelques minutes.");
+      } else if (!navigator.onLine) {
+        toast.error("🌐 Pas de connexion Internet. Vérifiez votre réseau.");
+      } else {
+        toast.error("❌ Une erreur s'est produite. Veuillez réessayer plus tard.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

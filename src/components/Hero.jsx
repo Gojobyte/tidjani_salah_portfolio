@@ -47,11 +47,13 @@ export default function Hero() {
 
           {/* === Image à droite === */}
           <div className="flex-1 flex justify-center">
-            <div className="w-40 h-40 sm:w-52 sm:h-52 md:w-604 md:h-64 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+            <div className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary shadow-lg">
               <img
                 src={heroImg}
-                alt="Tidjani Salah"
+                alt="Tidjani Salah - Entrepreneur et expert en développement pour l'Afrique"
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                loading="eager"
+                decoding="async"
               />
             </div>
           </div>

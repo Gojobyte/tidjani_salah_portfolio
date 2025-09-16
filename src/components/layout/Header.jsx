@@ -14,20 +14,30 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="text-2xl font-bold text-primary">Tidjani.</div>
 
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-6" aria-label="Navigation principale">
           <NavLinks />
         </nav>
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <button onClick={toggleMenu} className="md:hidden p-2">
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+            aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
       {isMenuOpen && (
-        <nav className="md:hidden bg-white dark:bg-gray-900 px-4 pb-4 pt-2 flex flex-col gap-3">
+        <nav
+          id="mobile-menu"
+          className="md:hidden bg-white dark:bg-gray-900 px-4 pb-4 pt-2 flex flex-col gap-3"
+          aria-label="Navigation mobile"
+        >
           <NavLinks onClick={closeMenu} />
         </nav>
       )}
